@@ -1,5 +1,11 @@
+import PropTypes from 'prop-types';
+
 export default function User(props) {
-  return (
+   
+    if (!props.isLoggedIn) {
+        return <h1>Not Logged In</h1>
+    }
+    return (  
     <div>
       <ul>
         <li>Name: {props.name}</li>
@@ -13,3 +19,20 @@ export default function User(props) {
     </div>
   );
 }
+
+User.propTypes = {
+    name: PropTypes.string.isRequired,
+    surname: PropTypes.string.isRequired,
+    age: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    isLoggedIn: PropTypes.bool.isRequired,
+    friends: PropTypes.array.isRequired,
+};
+
+User.defaultProps = {
+    name: "John",
+    surname: "Doe",
+    age: 18,
+    isLoggedIn: false,
+    friends: [],
+};
+

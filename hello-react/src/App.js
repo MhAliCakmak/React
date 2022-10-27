@@ -33,7 +33,7 @@ function App() {
         name="Mehmet" 
         surname="Çakmak"
         age={20}
-        isLoggedIn={true}
+        isLoggedIn={false}
         friends={friends}
       />
     </div>
