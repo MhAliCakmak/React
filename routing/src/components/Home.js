@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import Users from './Users'
 
 export default function Home() {
     return (
@@ -9,6 +10,9 @@ export default function Home() {
         </main>
         <nav>
           <Link to="/about">About</Link>
+        </nav>
+        <nav>
+          <Link to="/users">Users</Link>
         </nav>
       </>
     );
