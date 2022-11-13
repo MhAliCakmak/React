@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 export default function About() {
     return (
@@ -11,7 +11,7 @@ export default function About() {
           </p>
         </main>
         <nav>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </nav>
       </>
     );
