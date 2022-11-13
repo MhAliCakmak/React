@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Routes, Route, Link,useRoutes } from "react-router-dom";
-import User from "./components/User";
+
 import Users from "./components/Users";
 import Home from "./components/Home";
 import About from "./components/About";
+import User from "./components/User";
 
 
 import "./App.css";
@@ -16,8 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="users" element={<Users />} />
-        <Route path="user/:id" element={<User />} />
+        <Route path='users/*' element={<Users />}>
+            <Route path=':id' element={<User />} />
+        </Route>
+          
+          
       </Routes>
       
     </div>

@@ -1,10 +1,11 @@
 import React from 'react'
-import { useParams ,Link, userRouteMatch} from 'react-router-dom'
+import { useParams ,Link, Outlet} from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 export default function User() {
   const { id } = useParams()
+ 
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(true)
   useEffect(() => {
@@ -40,8 +41,10 @@ export default function User() {
       parseInt(id)<10 ? <Link to={`/user/${parseInt(id)+1}`}>Next User</Link> : <Link to={`/user/${parseInt(id)}`}>Next User</Link>
      }
      
+     
+   
 
-
+     
         
     </div>
   )
