@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, Link,useRoutes } from "react-router-dom";
+import { Routes, NavLink,Route } from "react-router-dom";
 
 import Users from "./components/Users";
 import Home from "./components/Home";
@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path='users/*' element={<Users />}>
-            <Route path=':id' element={<User />} />
+            <Route path=':name/:id' element={<User />} />
         </Route>
           
           

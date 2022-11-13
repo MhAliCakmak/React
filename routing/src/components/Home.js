@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import Users from './Users'
 
 export default function Home() {
@@ -9,10 +9,10 @@ export default function Home() {
           <p>You can do this, I believe in you.</p>
         </main>
         <nav>
-          <Link to="/about">About</Link>
+          <NavLink end  to="/about">About</NavLink>
         </nav>
         <nav>
-          <Link to="/users">Users</Link>
+          <NavLink end  to="/users">Users</NavLink>
         </nav>
       </>
     );
