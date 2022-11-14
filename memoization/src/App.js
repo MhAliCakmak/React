@@ -1,4 +1,4 @@
-import {useState,useMemo} from "react";
+import {useState,useMemo,useCallback} from "react";
 import './App.css';
 import Header from "./components/Header"
 
@@ -9,27 +9,30 @@ function App() {
   //   age: 25
 
   // }
-  const data = useMemo(() => {
-    return [ 
-      {
-        name: "John",
-        age: 25
-      },
-      {
-        name: "Jane",
-        age: 30
-      }
-    ]
+  // const data = useMemo(() => {
+  //   return [ 
+  //     {
+  //       name: "John",
+  //       age: 25
+  //     },
+  //     {
+  //       name: "Jane",
+  //       age: 30
+  //     }
+  //   ]
+  // },[])
+  const increment = useCallback(() => {
+    setCount((prevState)=> prevState+1)
   },[])
+
   return (
     <div className="App">
-      <Header data={data}/>
+      <Header  increment={increment}/>
       <hr/>
       <h1>{count}</h1>
       
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
-      <button onClick={() => setCount(0)}>Reset</button>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
+      
+      <input value={count} type="number" onChange={(e) => setCount(parseInt(e.target.value))}/>
     </div>
   );
 }
