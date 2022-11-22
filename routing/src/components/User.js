@@ -9,6 +9,7 @@ export default function User() {
     return text.toLowerCase().replace(/ /g, "-");
   };
   const [user, setUser] = useState({});
+  const [username , setUsername] = useState("")
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     axios
@@ -16,6 +17,7 @@ export default function User() {
       .then((res) => {
         console.log(res);
         setUser(res.data);
+      setUsername(res.data.name)
       })
       .finally(() => setLoading(false))
       .catch((err) => {
@@ -38,7 +40,8 @@ export default function User() {
       {/* 
       next user id
       */}
-      
+      <br />
+      <Link to={`/users/${slugText(username)}/${(parseInt(id)) % 10 + 1}`}> Next User </Link>
     </div>
   );
 }
